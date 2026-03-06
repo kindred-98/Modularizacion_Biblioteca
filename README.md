@@ -75,13 +75,21 @@ pytest -v
 
 ---
 ## ✨ Características Principales
+
 -Gestión completa del catálogo (agregar, buscar, listar).
+
 -Préstamo y devolución de libros.
+
 -Compra y venta con control de stock.
+
 -Registro automático de ingresos.
+
 -Arquitectura modular y escalable.
+
 -Validación automática con Pydantic.
+
 -Código documentado con docstrings.
+
 -Tests unitarios incluidos.
 
 ---
