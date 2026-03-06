@@ -1,38 +1,49 @@
-"""
-Interfaz de Menú
-----------------
-
-Contiene la interfaz de línea de comandos que interactúa con el usuario.
-"""
-
 from services.inventario_service import InventarioService
 from models.biblioteca import Biblioteca
 from models.libro import Libro
 
+def pedir_texto(msg):
+    while True:
+        t = input(msg).strip()
+        if t:
+            return t
+        print("No puede estar vacío.")
+
+def pedir_float(msg):
+    while True:
+        try:
+            v = float(input(msg))
+            return v
+        except ValueError:
+            print("Introduce un número válido.")
+
+def pedir_int(msg):
+    while True:
+        try:
+            v = int(input(msg))
+            return v
+        except ValueError:
+            print("Introduce un entero válido.")
 
 def iniciar_menu():
-    """
-    Inicia el menú interactivo de la biblioteca.
-    """
     biblioteca = Biblioteca("Biblioteca Central")
     servicio = InventarioService(biblioteca)
 
-    # Datos iniciales
-    biblioteca.agregar_libro(Libro("El Quijote", "Cervantes", 15.00, 3))
-    biblioteca.agregar_libro(Libro("Cien años", "García Márquez", 12.50, 2))
-    biblioteca.agregar_libro(Libro("1984", "Orwell", 10.00, 1))
+    biblioteca.agregar_libro(Libro("El Quijote", "Cervantes", 15, 3))
+    biblioteca.agregar_libro(Libro("Cien años", "García Márquez", 12.5, 2))
+    biblioteca.agregar_libro(Libro("1984", "Orwell", 10, 1))
 
     opciones = {
-        "1": lambda: print(servicio.prestar(input("Título: "))),
-        "2": lambda: print(servicio.devolver(input("Título: "))),
+        "1": lambda: print(servicio.prestar(pedir_texto("Título: "))),
+        "2": lambda: print(servicio.devolver(pedir_texto("Título: "))),
         "3": lambda: print(servicio.comprar(
-            input("Título: "),
-            input("Autor: "),
-            float(input("Precio: ")),
-            int(input("Cantidad: "))
+            pedir_texto("Título: "),
+            pedir_texto("Autor: "),
+            pedir_float("Precio: "),
+            pedir_int("Cantidad: ")
         )),
-        "4": lambda: print(servicio.vender(input("Título: "))),
-        "5": lambda: print("\n".join(servicio.catalogo()) or "(vacío)"),
+        "4": lambda: print(servicio.vender(pedir_texto("Título: "))),
+        "5": lambda: print("\n".join(servicio.catalogo())),
     }
 
     while True:
@@ -47,11 +58,10 @@ def iniciar_menu():
 """)
 
         op = input("Opción: ").strip()
-
         if op == "0":
-            print("👋 ¡Hasta luego!")
+            print("Hasta luego.")
             break
-        elif op in opciones:
+        if op in opciones:
             opciones[op]()
         else:
             print("Opción inválida.")

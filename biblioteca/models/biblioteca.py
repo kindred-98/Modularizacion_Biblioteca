@@ -1,26 +1,8 @@
-"""
-Módulo biblioteca
------------------
-
-Define la clase Biblioteca, que gestiona un catálogo de libros y
-opera sobre ellos (agregar, buscar, prestar, vender, etc.).
-"""
-
 from .libro import Libro
-
 
 class Biblioteca:
     """
-    Representa una biblioteca con un catálogo de libros y registro de ingresos.
-
-    Atributos
-    ---------
-    nombre : str
-        Nombre de la biblioteca.
-    catalogo : list[Libro]
-        Lista de libros disponibles.
-    ingresos : float
-        Total acumulado por ventas.
+    Gestiona un catálogo de libros y operaciones sobre ellos.
     """
 
     def __init__(self, nombre: str):
@@ -28,50 +10,54 @@ class Biblioteca:
         self.catalogo: list[Libro] = []
         self.ingresos = 0.0
 
-    def agregar_libro(self, libro: Libro) -> None:
-        """Agrega un libro al catálogo."""
+    def agregar_libro(self, libro: Libro):
         self.catalogo.append(libro)
 
     def buscar_libro(self, titulo: str) -> Libro | None:
-        """Busca un libro por título (insensible a mayúsculas)."""
+        titulo = titulo.strip().lower()
         for libro in self.catalogo:
-            if libro.titulo.lower() == titulo.lower():
+            if libro.titulo.lower() == titulo:
                 return libro
         return None
 
-    def prestar_libro(self, titulo: str) -> bool:
-        """Marca un libro como prestado si está disponible."""
+    def prestar_libro(self, titulo: str) -> str:
         libro = self.buscar_libro(titulo)
-        if libro and not libro.prestado:
-            libro.prestado = True
-            return True
-        return False
+        if not libro:
+            return "❌ Libro no encontrado."
+        if libro.prestado:
+            return "⚠️ Ya está prestado."
+        libro.prestado = True
+        return "📖 Libro prestado."
 
-    def devolver_libro(self, titulo: str) -> bool:
-        """Devuelve un libro previamente prestado."""
+    def devolver_libro(self, titulo: str) -> str:
         libro = self.buscar_libro(titulo)
-        if libro and libro.prestado:
-            libro.prestado = False
-            return True
-        return False
+        if not libro:
+            return "❌ Libro no encontrado."
+        if not libro.prestado:
+            return "⚠️ No estaba prestado."
+        libro.prestado = False
+        return "🔄 Libro devuelto."
 
-    def comprar_libro(self, titulo: str, autor: str, precio: float, cantidad: int = 1) -> None:
-        """Añade stock o crea un nuevo libro."""
+    def comprar_libro(self, titulo: str, autor: str, precio: float, cantidad: int) -> str:
         existente = self.buscar_libro(titulo)
         if existente:
             existente.cantidad += cantidad
-        else:
-            self.agregar_libro(Libro(titulo, autor, precio, cantidad))
+            return f"📦 Stock actualizado: {existente.cantidad} unidades."
+        nuevo = Libro(titulo, autor, precio, cantidad)
+        self.agregar_libro(nuevo)
+        return "📚 Libro añadido al catálogo."
 
-    def vender_libro(self, titulo: str) -> bool:
-        """Vende un libro si hay stock y no está prestado."""
+    def vender_libro(self, titulo: str) -> str:
         libro = self.buscar_libro(titulo)
-        if libro and libro.cantidad > 0 and not libro.prestado:
-            libro.cantidad -= 1
-            self.ingresos += libro.precio
-            return True
-        return False
+        if not libro:
+            return "❌ Libro no encontrado."
+        if libro.prestado:
+            return "⚠️ No se puede vender un libro prestado."
+        if libro.cantidad <= 0:
+            return "⚠️ Sin stock."
+        libro.cantidad -= 1
+        self.ingresos += libro.precio
+        return f"💰 Vendido por ${libro.precio:.2f}. Ingresos: ${self.ingresos:.2f}"
 
-    def obtener_catalogo(self) -> list[Libro]:
-        """Devuelve la lista de libros del catálogo."""
+    def obtener_catalogo(self):
         return self.catalogo

@@ -8,3 +8,7 @@ Quiero organizar este código de Python, separando responsabilidades en diferent
 #SEGUNDO PROMPT
 
 Quiero que me generes un README profesional, tests unitarios y el .gitignore.
+
+#TERCER PROMPT
+
+Generame valicaciones automatizadas con pydantic.
