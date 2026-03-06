@@ -15,6 +15,7 @@
 Un proyecto diseñado para demostrar cómo construir una aplicación real aplicando arquitectura modular, POO, Clean Code, validación profesional con Pydantic y separación estricta de responsabilidades.
 
 El resultado es un sistema robusto, escalable y fácil de mantener, ideal como base para proyectos más grandes o como ejemplo de buenas prácticas en Python.
+
 ---
 
 ## 🧱 Estructura del proyecto
