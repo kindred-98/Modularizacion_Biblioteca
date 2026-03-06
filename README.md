@@ -11,7 +11,9 @@
 # Modularizacion_Biblioteca
 
 # 📚 Sistema de Gestión de Biblioteca — Arquitectura Modular en Python
+
 Un proyecto diseñado para demostrar cómo construir una aplicación real aplicando arquitectura modular, POO, Clean Code, validación profesional con Pydantic y separación estricta de responsabilidades.
+
 El resultado es un sistema robusto, escalable y fácil de mantener, ideal como base para proyectos más grandes o como ejemplo de buenas prácticas en Python.
 ---
 
@@ -43,11 +45,12 @@ biblioteca/
 ```
 
 ### 🧩 Roles de cada capa
--models/ → Modelos de dominio y validación de datos.
--services/ → Lógica de negocio, reglas y mensajes.
--ui/ → Interacción con el usuario (CLI).
--tests/ → Pruebas unitarias con pytest.
--main.py → Punto de entrada de la aplicación.
+
+- models/ → Modelos de dominio y validación de datos.
+- services/ → Lógica de negocio, reglas y mensajes.
+- ui/ → Interacción con el usuario (CLI).
+- tests/ → Pruebas unitarias con pytest.
+- main.py → Punto de entrada de la aplicación.
 Esta estructura permite mantener el código limpio, desacoplado y preparado para crecer.
 
 ---
@@ -88,6 +91,7 @@ pytest -v
 ---
 
 ## 🧩 Validación de Datos con Pydantic
+
 El proyecto utiliza Pydantic para garantizar que todos los datos que entran al sistema sean válidos antes de crear o modificar un libro.
 Esto aporta seguridad, limpieza y profesionalidad al código.
 
@@ -107,4 +111,5 @@ Esto aporta seguridad, limpieza y profesionalidad al código.
 Este enfoque profesional garantiza que el sistema sea robusto, mantenible y escalable.
 
 📄 Licencia
+
 MIT License.
