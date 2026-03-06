@@ -76,21 +76,14 @@ pytest -v
 ---
 ## ✨ Características Principales
 
--Gestión completa del catálogo (agregar, buscar, listar).
-
--Préstamo y devolución de libros.
-
--Compra y venta con control de stock.
-
--Registro automático de ingresos.
-
--Arquitectura modular y escalable.
-
--Validación automática con Pydantic.
-
--Código documentado con docstrings.
-
--Tests unitarios incluidos.
+- Gestión completa del catálogo (agregar, buscar, listar).
+- réstamo y devolución de libros.
+- Compra y venta con control de stock.
+- Registro automático de ingresos.
+- Arquitectura modular y escalable.
+- Validación automática con Pydantic.
+- Código documentado con docstrings.
+- Tests unitarios incluidos.
 
 ---
 
@@ -99,18 +92,18 @@ El proyecto utiliza Pydantic para garantizar que todos los datos que entran al s
 Esto aporta seguridad, limpieza y profesionalidad al código.
 
 ### ¿Qué aporta Pydantic aquí?
-1-Valida tipos y reglas automáticamente (precio > 0, cantidad ≥ 1, textos no vacíos).
-2-Normaliza cadenas (elimina espacios innecesarios).
-3-Evita objetos inválidos dentro del catálogo.
-4-Genera errores estructurados, fáciles de manejar en la capa de servicios.
-5-Separa la validación del modelo, manteniendo el código limpio.
-6-Prepara el proyecto para una futura API REST, ya que Pydantic es estándar en FastAPI.
+1) Valida tipos y reglas automáticamente (precio > 0, cantidad ≥ 1, textos no vacíos).
+2) Normaliza cadenas (elimina espacios innecesarios).
+3) Evita objetos inválidos dentro del catálogo.
+4) Genera errores estructurados, fáciles de manejar en la capa de servicios.
+5) Separa la validación del modelo, manteniendo el código limpio.
+6) Prepara el proyecto para una futura API REST, ya que Pydantic es estándar en FastAPI.
 
 ### Cómo se integra
-1-LibroSchema (Pydantic) valida los datos de entrada.
-2-Libro recibe datos ya validados y se mantiene libre de validaciones manuales.
-3-InventarioService captura errores de validación y los transforma en mensajes claros.
-4-La UI solo pide datos, sin preocuparse por reglas o formatos.
+1) LibroSchema (Pydantic) valida los datos de entrada.
+2) Libro recibe datos ya validados y se mantiene libre de validaciones manuales.
+3) InventarioService captura errores de validación y los transforma en mensajes claros.
+4) La UI solo pide datos, sin preocuparse por reglas o formatos.
 Este enfoque profesional garantiza que el sistema sea robusto, mantenible y escalable.
 
 📄 Licencia
