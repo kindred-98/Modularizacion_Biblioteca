@@ -1,3 +1,24 @@
+<!-- Lenguaje y versión -->
+![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge&logo=python)
+
+<!-- Validación -->
+![Pydantic](https://img.shields.io/badge/Validation-Pydantic-009688?style=for-the-badge&logo=pydantic)
+
+<!-- Testing -->
+![Pytest](https://img.shields.io/badge/Testing-Pytest-0A9EDC?style=for-the-badge&logo=pytest)
+
+<!-- Arquitectura y calidad -->
+![Clean Code](https://img.shields.io/badge/Code-Clean_Code-blueviolet?style=for-the-badge)
+![Modular](https://img.shields.io/badge/Architecture-Modular-FF9800?style=for-the-badge)
+![CLI](https://img.shields.io/badge/Interface-CLI-lightgrey?style=for-the-badge)
+
+<!-- Estado del proyecto -->
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+
+<!-- Licencia -->
+![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)
+
+
 # Modularizacion_Biblioteca
 
 # 📚 Sistema de Gestión de Biblioteca — Arquitectura Modular en Python
