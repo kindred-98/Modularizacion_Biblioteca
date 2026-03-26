@@ -29,6 +29,7 @@ Un sistema de gestión de biblioteca desarrollado en Python que demuestra las me
 - [Licencia](#licencia)
 - [Autor](#autor)
 
+<a id="características"></a>
 ## ✨ Características
 
 - **Gestión Completa del Catálogo**: Agregar, buscar, listar y gestionar libros con metadatos completos
@@ -39,6 +40,7 @@ Un sistema de gestión de biblioteca desarrollado en Python que demuestra las me
 - **Interfaz CLI**: Menú interactivo para operaciones del usuario
 - **Documentación**: Código documentado con docstrings y README detallado
 
+<a id="arquitectura"></a>
 ## 🏗️ Arquitectura
 
 El proyecto sigue los principios de **Clean Architecture** y **Domain-Driven Design (DDD)**, organizando el código en capas bien definidas:
@@ -72,6 +74,7 @@ biblioteca/
 - **Validación en la Frontera**: Pydantic valida datos en el límite del sistema
 - **Principio de Inversión de Dependencias**: Las capas superiores no dependen de las inferiores
 
+<a id="instalación"></a>
 ## 🚀 Instalación
 
 ### Prerrequisitos
@@ -98,6 +101,7 @@ biblioteca/
    pip install -r requirements.txt
    ```
 
+<a id="uso"></a>
 ## ▶️ Uso
 
 ### Ejecución del Programa
@@ -131,6 +135,7 @@ servicio = InventarioService()
 servicio.agregar_libro(libro)
 ```
 
+<a id="pruebas"></a>
 ## 🧪 Pruebas
 
 El proyecto incluye una suite completa de pruebas unitarias usando pytest.
@@ -154,6 +159,7 @@ pytest --cov=biblioteca --cov-report=html
 - `test_biblioteca.py`: Pruebas del agregado Biblioteca
 - `test_inventario_service.py`: Pruebas de los casos de uso
 
+<a id="validación-de-datos-con-pydantic"></a>
 ## 🔍 Validación de Datos con Pydantic
 
 Pydantic se utiliza para validar automáticamente todos los datos que entran al sistema, asegurando integridad y consistencia.
@@ -174,6 +180,7 @@ Input Usuario → UI → Servicio → Validación Pydantic → Modelo → Persis
 
 Los esquemas Pydantic actúan como contratos entre capas, garantizando que solo datos válidos fluyan a través del sistema.
 
+<a id="contribución"></a>
 ## 🤝 Contribución
 
 ¡Las contribuciones son bienvenidas! Para contribuir:
@@ -191,6 +198,7 @@ Los esquemas Pydantic actúan como contratos entre capas, garantizando que solo 
 - Documenta nuevas funcionalidades con docstrings
 - Actualiza el README si es necesario
 
+<a id="licencia"></a>
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
@@ -198,12 +206,11 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ---
 <div align="center">
 
+<a id="autor"></a>
 ## 👨‍💻 Autor
 
 **Desarrollado por A.D.E.V - Demostrando las mejores prácticas en desarrollo Python**
 
-[![GitHub](https://img.shields.io/badge/GitHub-@TU_USUARIO-181717?style=for-the-badge&logo=github)](https://github.com/kindred-98/Contador_Palabras_Texto.git)
+[![GitHub](https://img.shields.io/badge/GitHub-@angel-181717?style=for-the-badge&logo=github)](https://github.com/angel/Modularizacion_Biblioteca)
 
 </div>
-
-[autor]: #-Autor
