@@ -211,6 +211,10 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 **Desarrollado por A.D.E.V - Demostrando las mejores prácticas en desarrollo Python**
 
-[![GitHub](https://img.shields.io/badge/GitHub-@angel-181717?style=for-the-badge&logo=github)](https://github.com/angel/Modularizacion_Biblioteca)
+[![GitHub](https://img.shields.io/badge/GitHub-kindred--98-181717?style=for-the-badge&logo=github)](https://github.com/kindred-98)
+
+⭐ Si este proyecto te resulta útil, considera dejarle una estrella en GitHub
 
 </div>
+
+
